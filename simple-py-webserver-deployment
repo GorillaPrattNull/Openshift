@@ -1,0 +1,21 @@
+    apiVersion: apps.openshift.io/v1 # or apps/v1 for standard Kubernetes Deployment
+    kind: Deployment
+    metadata:
+      name: simple-py-webserver-deployment
+      labels:
+        app: simple-py-webserver
+    spec:
+      replicas: 3 # This sets the desired number of replicas to 3
+      selector:
+        matchLabels:
+          app: simple-py-webserver
+      template:
+        metadata:
+          labels:
+            app: simple-py-webserver
+        spec:
+          containers:
+            - name: my-app-container
+              image: docker.io/alikyi/simple-py-webserver # Replace with your desired image
+              ports:
+                - containerPort: 8080
