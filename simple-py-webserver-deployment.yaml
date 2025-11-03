@@ -1,5 +1,5 @@
-    apiVersion: apps.openshift.io/v1 # or apps/v1 for standard Kubernetes Deployment
-    kind: DeploymentConfig
+    apiVersion: apps/v1 # or apps/v1 for standard Kubernetes Deployment
+    kind: Deployment
     metadata:
       name: simple-py-webserver-deployment
       labels:
